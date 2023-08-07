@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Currency converter</title>
+</head>
+<body>
+    <div class="container">
+        <div class="center-container">
+            <h1>Currency Converter</h1>
+            <div class="mid-container">
+                <div class="input-container">
+                    <div class="buttons-container">
+                        <button class="currency-button" onclick="setFirstCurrency('€');">EUR</button>
+                        <button class="currency-button" onclick="setFirstCurrency('$');">USD</button>
+                        <button class="currency-button" onclick="setFirstCurrency('£');">GBP</button>
+                    </div>
+                    <div class="input-line-container">
+                        <input type="text" class="input-line" id="first-input">
+                    </div>
+                    <p class="currency-p"><img src="images/eur.png" alt="" class="currency-flag"></p>
+                </div>
+                <div class="input-container">
+                    <div class="buttons-container">
+                        <button class="currency-button" onclick="setSecondCurrency('€');">EUR</button>
+                        <button class="currency-button" onclick="setSecondCurrency('$');">USD</button>
+                        <button class="currency-button" onclick="setSecondCurrency('£');">GBP</button>
+                    </div>
+                    <div class="input-line-container">
+                        <input type="text" class="input-line" id="second-input">
+                    </div>
+                    <p class="currency-p-2"><img src="images/eur.png" alt="" class="currency-flag"></p>
+                </div>
+            </div>
+            <button class="convert-button" onclick="convertValues();">CONVERT</button>
+        </div>
+    </div>
+
+    <script>
+        let firstCurrency = '€';
+        let secondCurrency = '$';
+
+        let eurFlag = '<img src="images/eur.png" class="currency-flag">';
+        let usFlag = '<img src="images/usa.png" class="currency-flag">';
+        let gbFlag = '<img src="images/gb.png" class="currency-flag">';
+
+        let firstInputLine = document.querySelector('#first-input');
+        let secondInputLine = document.querySelector('#second-input');
+
+        let firstFlag = document.querySelector('.currency-p');
+        let secondFlag = document.querySelector('.currency-p-2');
+
+        firstFlag.innerHTML = eurFlag;
+        secondFlag.innerHTML = usFlag;
+
+        function setFirstCurrency(currency) {
+            firstCurrency = currency;
+            firstInputLine.value = '';
+            secondInputLine.value = '';
+            if (currency === '€') {
+                firstFlag.innerHTML = eurFlag;
+            } else if (currency === '$') {
+                firstFlag.innerHTML = usFlag;
+             } else if (currency === '£') {
+                firstFlag.innerHTML = gbFlag;
+            }
+        }
+
+        function setSecondCurrency(currency) {
+            secondCurrency = currency;
+            firstInputLine.value = '';
+            secondInputLine.value = '';
+            if (currency === '€') {
+                secondFlag.innerHTML = eurFlag;
+            } else if (currency === '$') {
+                secondFlag.innerHTML = usFlag;
+             } else if (currency === '£') {
+                secondFlag.innerHTML = gbFlag;
+            }
+        }
+
+        function convertValues() {
+            if(firstCurrency === secondCurrency) {
+                secondInputLine.value = firstInputLine.value;
+            }
+            else if(firstCurrency === '€' && secondCurrency === '$') {
+                secondInputLine.value = firstInputLine.value * 1.102593;
+            }
+            else if(firstCurrency === '€' && secondCurrency === '£') {
+                secondInputLine.value = firstInputLine.value * 0.864914;
+            }
+            else if(firstCurrency === '$' && secondCurrency === '£') {
+                secondInputLine.value = firstInputLine.value * 0.784437;
+            }
+            else if(firstCurrency === '$' && secondCurrency === '€') {
+                secondInputLine.value = firstInputLine.value * 0.906953;
+            }
+            else if(firstCurrency === '£' && secondCurrency === '€') {
+                secondInputLine.value = firstInputLine.value * 1.156184;
+            }
+            else if(firstCurrency === '£' && secondCurrency === '$') {
+                secondInputLine.value = firstInputLine.value * 1.2748;
+            }
+        }
+        
+    </script>
+</body>
+</html>
