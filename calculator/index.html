@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <p class="result-line"></p>
+        <div class="button-container">
+            <button class="number-seven" onclick="makeNumber('7');">7</button>
+            <button class="number-eight" onclick="makeNumber('8');">8</button>
+            <button class="number-nine" onclick="makeNumber('9');">9</button>
+            <button class="restart" onclick="restartLine();">C</button>
+            <button class="number-four" onclick="makeNumber('4');">4</button>
+            <button class="number-five" onclick="makeNumber('5');">5</button>
+            <button class="number-six" onclick="makeNumber('6');">6</button>
+            <button class="op-add" onclick="startOperation('+');">+</button>
+            <button class="number-three" onclick="makeNumber('3');">3</button>
+            <button class="number-two" onclick="makeNumber('2');">2</button>
+            <button class="number-one" onclick="makeNumber('1');">1</button>
+            <button class="op-sub" onclick="startOperation('-');">-</button>
+            <button class="op-mul" onclick="startOperation('*');">*</button>
+            <button class="number-zero" onclick="makeNumber('0');">0</button>
+            <button class="op-div" onclick="startOperation('/');">/</button>
+            <button class="op-equ" onclick="finishOperation();">=</button>
+        </div>
+    </div>
+    <script>
+        let result = document.querySelector('.result-line');
+        let resultNumber = '';
+        let operation = '';
+        let firstNumber = 0;
+        let secondNumber = 0;
+
+        function makeNumber(number) {
+            resultNumber += number;
+            result.innerText = resultNumber;
+        }
+        function restartLine() {
+            result.innerText = '';
+            resultNumber = '';
+        }
+        function startOperation(op) {
+            if(!firstNumber) {
+                firstNumber = parseInt(resultNumber);
+            }
+            resultNumber = '';
+            operation = op;
+        }
+        function finishOperation() {
+            if(firstNumber) {
+                secondNumber = parseInt(resultNumber);
+                if(operation === '+') {
+                    resultNumber = firstNumber + secondNumber;
+            }
+                else if(operation === '-') {
+                    resultNumber = firstNumber - secondNumber;
+            }
+                else if(operation === '*') {
+                    resultNumber = firstNumber * secondNumber;
+            }
+                else if(operation === '/') {
+                    resultNumber = firstNumber / secondNumber;
+                    if(secondNumber === 0) {
+                        resultNumber = 'Undefined';
+                    }
+            }
+
+                result.innerText = resultNumber;
+                resultNumber = '';
+                firstNumber = 0;
+                secondNumber = 0;
+            }
+        }
+    </script>
+</body>
+</html>
