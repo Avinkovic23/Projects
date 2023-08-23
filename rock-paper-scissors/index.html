@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container-column">
+        <h1 id="mainTitle">ROCK <br> PAPER <br> SCISSORS</h1>
+        <button class="main-btn" id="playBtn">Play</button>
+        <button class="main-btn" id="gameMode">Game Mode</button>
+        <div class="game-mode hidden">
+            <span id="valueShow">The first to 5</span>
+            <input type="range" name="playingValue" id="playingValue" min="3" max="15" step="1" value="5">
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

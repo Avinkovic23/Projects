@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="player-stats">
+                <p class="stats" id="playerStats">W: 0 T: 0 L: 0</p>
+                <img src="images/man.png" alt="" class="icon" id="manIcon">
+            </div>
+            <div class="com-stats">
+                <img src="images/robot.png" alt="" class="icon" id="robotIcon">
+                <p class="stats" id="comStats">W: 0 T: 0 L: 0</p>
+            </div>
+        </div>
+        <div class="play-container">
+            <button class="move-button" id="rockMove"><img src="images/rock.png" class="move-icon"></button>
+            <button class="move-button" id="paperMove"><img src="images/paper.png" alt="" class="move-icon"></button>
+            <button class="move-button" id="scissorsMove"><img src="images/scissors.png" alt="" class="move-icon"></button>
+        </div>
+        <h1 id="resultMessage"></h1>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
