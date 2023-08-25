@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="images/logo.png" alt="" class="logo">
+            <button id="addBtn">NEW BOOK</button>
+        </div>
+        <div class="grid-container"></div>
+        <dialog id="modal">
+            <form action="#">
+                <h1>Fun fact: Reading is fun and beneficial!</h1>
+                <div class="input-container">
+                    <label for="authorName">NAME OF THE AUTHOR</label>
+                    <input type="text" name="author" id="authorName" required>
+                </div>
+                <div class="input-container">
+                    <label for="bookTitle">BOOK TITLE</label>
+                    <input type="text" name="title" id="bookTitle" required>
+                </div>
+                <div class="input-container">
+                    <label for="numPages">NUMBER OF PAGES</label>
+                    <input type="text" name="pages" id="numPages" required>
+                </div>
+                <label for="readCheck" id="checkLabel">I have already read this book</label>
+                <input type="checkbox" name="read" id="readCheck">
+                <button id="submitBtn">ADD</button>
+                <button id="closeBtn">CANCEL</button>
+            </form>
+        </dialog>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
