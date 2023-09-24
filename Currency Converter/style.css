@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(67,63,147);
+    background: linear-gradient(180deg, rgba(67,63,147,1) 0%, rgba(101,180,34,1) 0%, rgba(2,84,255,1) 0%, rgba(70,136,246,1) 100%, rgba(80,65,182,1) 100%);
+}
+
+.title {
+    margin-top: 80px;
+    margin-bottom: 100px;
+    font-size: 50px;
+    color: aliceblue;
+    position: relative;
+}
+
+.title::after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    bottom: -20px;
+    left: 0px;
+}
+
+.exchange-container {
+    background-color: white;
+    width: 80%;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.exchange-input {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-container {
+    margin: 15px;
+    width: 350px;
+}
+
+.input-title {
+    margin-left: 2px;
+    margin-bottom: 4px;
+    font-weight: bold;
+    font-size: 17px;
+    color: black;
+}
+
+.input-container input {
+    height: 45px;
+    width: 100%;
+    border: 1px solid #CDCDCD;
+    border-radius: 5px;
+    outline: 0;
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+select {
+    height: 45px;
+    width: 100%;
+    border: 1px solid #CDCDCD;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    outline: 0;
+}
+
+#swapBtn {
+    min-height: 50px;
+    min-width: 50px;
+    border: 1px solid lightgray;
+    background-color: white;
+    border-radius: 200px;
+    cursor: pointer;
+    font-size: 25px;
+    color: #1467BA;
+}
+
+.button-container {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#convertBtn {
+    height: 100%;
+    width: 200px;
+    border: none;
+    font-size: 20px;
+    background-color: #1467BA;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#convertBtn:hover {
+    scale: 1.02;
+}
+
+.full-scale {
+    height: 400px;
+    transition: all 0.5s ease;
+}
+
+.result-container {
+    margin-top: 30px;
+}
+
+.result-container p {
+    color: gray;
+    margin: 5px 0px 0px 50px;
+}
+
+#initialAmount {
+    color: gray;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#endAmount {
+    color: #383939;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+    .exchange-container {
+        height: 700px;
+    }
+    .exchange-input {
+        flex-direction: column;
+        margin: 120px
+    }
+}
+
+@media (max-width: 360px) {
+    .input-container {
+        width: 250px;
+    }
+    .title {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 415px) {
+    .input-container {
+        width: 260px;
+    }
+    .title {
+        font-size: 25px;
+    }
+}
