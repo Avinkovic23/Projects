@@ -1,0 +1,196 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 100px;
+    background-color: #ECCC2D;
+}
+
+.heart-img {
+    height: 50px;
+    margin: 10px;
+}
+
+#livesNumber {
+    font-size: 40px;
+}
+
+.word-container {
+    height: 300px;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.letter {
+    height: 100px;
+    max-width: 100px;
+    flex: 1;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    margin: 10px;
+    position: relative;
+}
+
+.letter::after {
+    content: '';
+    height: 5px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+#wordInput {
+    height: 50px;
+    width: 600px;
+    padding-left: 10px;
+    font-size: 20px;
+    outline: 0;
+    margin: 30px;
+    border-radius: 8px;
+    border: 2px solid gray;
+}
+
+.letter-container {
+    width: 750px;
+    height: 230px;
+    background-color: #F6E58E;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.used-letter {
+    height: 60px;
+    width: 60px;
+    background-color: rosybrown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border: 5px solid pink;
+    border-radius: 10px;
+    font-size: 30px;
+    margin: 10px;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+.modal {
+    height: 90%;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 1%;
+    border: 0;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+.modal p {
+    text-align: center;
+    margin-top: 200px;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.modal button {
+    height: 50px;
+    width: 200px;
+    margin: 10px;
+    border: 0;
+    background-color: #ECCC2D;
+    font-size: 20px;
+    color: brown;
+    font-weight: bold;
+}
+
+.modal button:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    #wordInput {
+        width: 300px;
+    }
+    .word-container {
+        width: 300px;
+    }
+    .navbar {
+        padding: 0;
+        justify-content: center;
+    }
+    .letter-container {
+        width: 300px;
+        height: 300px;
+    }
+    .used-letter {
+        height: 50px;
+        width: 50px;
+        font-size: 25px;
+        margin: 4px;
+    }
+}
+
+@media (max-width: 300px) {
+    #wordInput {
+        width: 250px;
+    }
+    .word-container {
+        width: 250px;
+    }
+    .letter {
+        height: 70px;
+    }
+    .navbar {
+        padding: 0;
+        justify-content: center;
+    }
+    .letter-container {
+        width: 250px;
+        height: 200px;
+    }
+    .used-letter {
+        height: 40px;
+        width: 40px;
+        font-size: 20px;
+        margin: 4px;
+    }
+}
